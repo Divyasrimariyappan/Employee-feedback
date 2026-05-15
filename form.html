@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employee Feedback Form</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background:#f2f4f8;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:40px;
+    }
+
+    .container{
+      width:900px;
+      background:#fff;
+      padding:40px;
+      border-radius:10px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1{
+      font-size:32px;
+      margin-bottom:10px;
+      color:#222;
+    }
+
+    .subtitle{
+      color:#666;
+      margin-bottom:30px;
+    }
+
+    h2{
+      margin:30px 0 20px;
+      color:#333;
+      font-size:22px;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .form-group{
+      display:flex;
+      flex-direction:column;
+    }
+
+    label{
+      margin-bottom:8px;
+      font-weight:600;
+      color:#444;
+    }
+
+    input,
+    textarea{
+      padding:12px;
+      border:1px solid #ccc;
+      border-radius:6px;
+      font-size:15px;
+    }
+
+    textarea{
+      resize:none;
+      height:120px;
+    }
+
+    .rating-section{
+      margin-bottom:25px;
+    }
+
+    .rating-row{
+      display:flex;
+      align-items:center;
+      gap:15px;
+      margin-top:10px;
+      flex-wrap:wrap;
+    }
+
+    .rating-buttons{
+      display:flex;
+      gap:10px;
+    }
+
+    .rating-buttons input{
+      display:none;
+    }
+
+    .rating-buttons label{
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      border:1px solid #bbb;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      cursor:pointer;
+      transition:0.3s;
+      background:#fff;
+    }
+
+    .rating-buttons input:checked + label{
+      background:#4c6ef5;
+      color:white;
+      border:none;
+    }
+
+    .rating-text{
+      color:#777;
+      font-size:14px;
+    }
+
+    .full-width{
+      grid-column:1 / 3;
+    }
+
+    .submit-btn{
+      margin-top:30px;
+      text-align:center;
+    }
+
+    button{
+      background:#4c6ef5;
+      color:white;
+      border:none;
+      padding:14px 35px;
+      font-size:16px;
+      border-radius:8px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:#3b5bdb;
+    }
+
+    @media(max-width:768px){
+
+      .container{
+        width:100%;
+        padding:25px;
+      }
+
+      .form-grid{
+        grid-template-columns:1fr;
+      }
+
+      .full-width{
+        grid-column:1;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Employee Performance Feedback Form</h1>
+  <p class="subtitle">
+    Please complete all sections to provide comprehensive feedback
+  </p>
+
+  <h2>Employee Information</h2>
+
+  <form action="/submit-feedback" method="POST">
+
+    <div class="form-grid">
+
+      <div class="form-group">
+        <label>Employee Name</label>
+        <input type="text" name="employee_name">
+      </div>
+
+      <div class="form-group">
+        <label>Email ID</label>
+        <input type="email" name="employee_email">
+      </div>
+
+      <div class="form-group">
+        <label>Department</label>
+        <input type="text" name="department">
+      </div>
+
+      <div class="form-group">
+        <label>Review Period</label>
+        <input type="text" name="review_period">
+      </div>
+
+    </div>
+
+    <h2>Performance Ratings</h2>
+
+    <!-- Quality -->
+    <div class="rating-section">
+      <label>Quality of Work</label>
+
+      <div class="rating-row">
+
+        <div class="rating-buttons">
+
+          <input type="radio" id="q1" name="quality" value="1">
+          <label for="q1">1</label>
+
+          <input type="radio" id="q2" name="quality" value="2">
+          <label for="q2">2</label>
+
+          <input type="radio" id="q3" name="quality" value="3">
+          <label for="q3">3</label>
+
+          <input type="radio" id="q4" name="quality" value="4">
+          <label for="q4">4</label>
+
+          <input type="radio" id="q5" name="quality" value="5">
+          <label for="q5">5</label>
+
+        </div>
+
+        <span class="rating-text">1 = Poor, 5 = Excellent</span>
+
+      </div>
+    </div>
+
+    <!-- Productivity -->
+    <div class="rating-section">
+      <label>Productivity & Efficiency</label>
+
+      <div class="rating-row">
+
+        <div class="rating-buttons">
+
+          <input type="radio" id="p1" name="productivity" value="1">
+          <label for="p1">1</label>
+
+          <input type="radio" id="p2" name="productivity" value="2">
+          <label for="p2">2</label>
+
+          <input type="radio" id="p3" name="productivity" value="3">
+          <label for="p3">3</label>
+
+          <input type="radio" id="p4" name="productivity" value="4">
+          <label for="p4">4</label>
+
+          <input type="radio" id="p5" name="productivity" value="5">
+          <label for="p5">5</label>
+
+        </div>
+
+      </div>
+    </div>
+
+    <h2>Detailed Feedback</h2>
+
+    <div class="form-grid">
+
+      <div class="form-group full-width">
+        <label>Key Strengths</label>
+        <textarea name="strengths"></textarea>
+      </div>
+
+      <div class="form-group full-width">
+        <label>Areas for Improvement</label>
+        <textarea name="improvement"></textarea>
+      </div>
+
+      <div class="form-group full-width">
+        <label>Goals for Next Period</label>
+        <textarea name="goals"></textarea>
+      </div>
+
+    </div>
+
+    <h2>Overall Assessment</h2>
+
+    <div class="form-group">
+      <label>Additional Comments</label>
+      <textarea name="comments"></textarea>
+    </div>
+
+    <br>
+
+    <div class="form-group">
+      <label>Reviewer Name</label>
+      <input type="text" name="reviewer">
+    </div>
+
+    <div class="submit-btn">
+      <button type="submit">Submit Feedback</button>
+    </div>
+
+  </form>
+
+</div>
+
+</body>
+</html>
