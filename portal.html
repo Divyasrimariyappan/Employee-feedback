@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<htm lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Portal</title>
+    <link rel="stylesheet" 
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<style>
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body{
+    background-color: #dfe3ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+.container{
+    width: 90%;
+    max-width: 1100px;
+}
+.top-icon{
+    width: 70px;
+    height: 70px;
+    background: #2f66e8;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top-icon i{
+    color: white;
+    font-size: 30px;
+}
+.main-card{
+    background: #f8f8f8;
+    border-radius: 20px;
+    padding: 40px 100px 50px 60px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    margin-bottom: 30px;
+    max-width: 1500px;
+}
+.main-card h1{
+    font-size: 100;
+    margin-bottom: 20px;
+    color: #000;
+}
+.main-card p{
+    color: #444;
+    font-size: 16px;
+    width:1178;
+    height:88; 
+    padding: auto 80px auto 80px;
+    margin: auto 80px auto 80px;
+    line-height: 1.8;
+}
+.main-card button{
+    background: #2f66e8;
+    color: white;
+    border: none;
+    padding: 18px 35px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.main-card button i{
+    margin-left: 10px;
+}
+.main-card button:hover{
+    background: #1f4fc0;
+}
+.feature-section{
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+.feature-card1{
+    flex: 1;
+    min-width: 250px;
+    background: #f8f8f8;
+    border-radius: 18px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+.feature-card1 h2{
+    font-size: 30px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    color: #000;
+    line-height: 1.8;
+}
+.feature-card1 p{
+    color: #444;
+    font-size: 14px;
+    line-height: 1.8;
+    text-align:center;
+}
+.feature-section{
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+.feature-card2{
+    flex: 1;
+    min-width: 250px;
+    background: #f8f8f8;
+    border-radius: 18px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+.feature-card2 h2{
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #000;
+    margin-top: 20px;
+    line-height: 1.8;
+}
+.feature-card2 p{
+    color: #444;
+    font-size: 14px;
+    line-height: 1.8;
+    text-align:center;
+}
+.feature-section{
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+.feature-card3{
+    flex: 1;
+    min-width: 250px;
+    background: #f8f8f8;
+    border-radius: 18px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+.feature-card3 h2{
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #000;
+    margin-top: 20px;
+    line-height: 1.8;
+}
+.feature-card3 p{
+    color: #444;
+    font-size: 14px;
+    line-height: 1.8;
+    text-align:center;
+}
+.icon-box{
+    width: 50px;
+    height: 50px;
+    border: 2px solid #d4d4d4;
+    border-radius: 12px;
+    margin: 0 auto 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon-box i{
+    color: #2f66e8;
+    font-size: 28px;
+}
+</style>
+    <div class="container">
+        <div class="main-card">
+            <div class="top-icon">
+                <i class="fa-regular fa-message"></i>
+            </div>
+            <h1>Employee Feedback system</h1>
+            <p> Your voice matters. Share your insights, suggestion, and experiences to help us build a better workplace together.</p><br>
+            <button onclick="window.location.href='/loginpage'">
+                Go to the Employee Portal
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>      
+        <div class="feature-section">
+             <div class="feature-card1">
+                <div class="icon-box">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+                    <h3> Anonymous Option</h3>
+                    <p> Share feedback privately and securely </p>
+            </div>
+            <div class="feature-card2">
+                <div class="icon-box">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>
+                <h3>Feedback Mail</h3>
+                <p> Share your opinions through our feedback submission mail system. </p>
+            </div>
+            <div class="feature-card3">
+                <div class="icon-box">
+                    <i class="fa-solid fa-medal"></i>
+                </div>
+                <h3>Recognition</h3>
+                <p> Celebrate achievements together </p>
+           </div>     
+    </div>
+</body>
+</html>
